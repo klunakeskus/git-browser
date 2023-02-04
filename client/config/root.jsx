@@ -9,6 +9,7 @@ import Home from '../components/home'
 import DummyView from '../components/dummy-view'
 import NotFound from '../components/404'
 
+import Browser from '../components/browser'
 import Startup from './startup'
 
 const OnlyAnonymousRoute = ({ component: Component, ...rest }) => {
@@ -50,6 +51,7 @@ const RootComponent = (props) => {
           <Switch>
             <Route exact path="/" component={DummyView} />
             <Route exact path="/dashboard" component={Home} />
+            <Route exact path="/browser" component={Browser} />
             <PrivateRoute exact path="/hidden-route" component={DummyView} />
             <OnlyAnonymousRoute exact path="/anonymous-route" component={DummyView} />
 
