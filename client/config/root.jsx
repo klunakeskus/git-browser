@@ -10,6 +10,8 @@ import DummyView from '../components/dummy-view'
 import NotFound from '../components/404'
 
 import Browser from '../components/browser'
+import ReadMe from '../components/readme'
+import UsernamePage from '../components/username-page'
 import Startup from './startup'
 
 const OnlyAnonymousRoute = ({ component: Component, ...rest }) => {
@@ -52,6 +54,8 @@ const RootComponent = (props) => {
             <Route exact path="/" component={DummyView} />
             <Route exact path="/dashboard" component={Home} />
             <Route exact path="/browser" component={Browser} />
+            <Route exact path="/browser/:userName" component={UsernamePage} />
+            <Route exact path="/browser/:userName/:repoName" component={ReadMe} />
             <PrivateRoute exact path="/hidden-route" component={DummyView} />
             <OnlyAnonymousRoute exact path="/anonymous-route" component={DummyView} />
 
